@@ -17,3 +17,32 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 '''
+# tmp = '{:<8} {1} {2:>8}'
+
+# with open('CAM_table.txt', 'r') as mtab:
+#     for string in mtab:
+#         if 'DYNAMIC' in string:
+#             string = string.split()
+#             print(tmp.format(string[0],string[1],string[3]))
+#         else:
+#             continue
+
+# f = open('CAM_table.txt', 'r')
+# for L1 in f:
+#     list = L1.rstrip().split()
+#     if (L1 in L1[0].isdigit()):
+#         print(L1.rstrip())
+# f.close()
+
+t1 = '{0:<8}  {1} {2:>8}'
+
+with open('CAM_table.txt','r') as mac_table:
+    for string in mac_table:
+        if 'DYNAMIC' in string:
+            string = string.split()
+            print(t1.format(string[0],string[1],string[3]))
+
+
+
+        else:
+            continue

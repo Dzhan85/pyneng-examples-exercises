@@ -15,5 +15,12 @@
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 '''
+from sys import argv 
 
+t1 = argv[1]
+t2 = argv[2]
 ignore = ['duplex', 'alias', 'Current configuration']
+with open(t1) as src, open(t2, 'w') as dest:
+    for line in src:
+        if not any([word in line for word in ignore]):
+            dest.write(line)

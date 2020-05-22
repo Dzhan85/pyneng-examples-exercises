@@ -14,3 +14,17 @@ Outbound Interface:    FastEthernet0/0
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 '''
+
+import re
+
+t1 = ['protocol:', 'prefix:', 'AD/METRIC:', 'Next-Hop:', 'Last update:', 'Outbound Interface:']
+with open('ospf.txt') as f:
+    for line in f:
+        line = line.replace('O', 'OSPF')
+        str1 = re.split(r'(?:via|[\[\], ])+', line)
+        i = 0
+        for s in str1:
+            print('{:<23} {}'.format(t1[i], s))
+            i += 1
+        print('-------------------')
+print('*****************************************************')

@@ -12,3 +12,12 @@
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 '''
+from sys import argv
+
+#t1 = argv[1]
+t1 = 'config_sw1.txt'
+ignore = ['duplex', 'alias', 'current configuration']
+with open(t1) as f:
+    for line in f:
+        if (not line.startswith("!")) and (not any([word in line for word in ignore])):
+            print(line.rstrip('\n'))

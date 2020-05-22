@@ -12,5 +12,11 @@
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 '''
+from sys import argv
 
+t1 = argv[1]
 ignore = ['duplex', 'alias', 'Current configuration']
+with open(t1) as src, open('config_sw1_cleared.txt', 'w') as dest:
+    for line in src:
+        if not any([word in line for word  in ignore]):
+            dest.write(line)
